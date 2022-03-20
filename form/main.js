@@ -9,7 +9,20 @@ function autofill() {
     document.getElementById("lastName").value = array[2];
     document.getElementById("lastName").disabled = true;
   }
-  
+
+  let date = document.getElementById("date").value;
+  const now = new Date();
+  const diff = Math.abs(now - date);
+  const age = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+  document.getElementById("age").value = age;
+  document.getElementById("age").disabled = true;
+}
+
+function calculateAge(date) {
+  const now = new Date();
+  const diff = Math.abs(now - date);
+  const age = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+  return age;
 }
 
 function validation() {
@@ -19,6 +32,4 @@ function validation() {
   if (email !== email2) {
     document.getElementById("errorEmail").value = "Not match";
   }
-
-  
 }
