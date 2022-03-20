@@ -9,7 +9,6 @@ function autofill() {
     document.getElementById("lastName").value = array[2];
     document.getElementById("lastName").disabled = true;
   }
-
   let date = document.getElementById("date").value;
   const now = new Date();
   const diff = Math.abs(now - date);
@@ -28,7 +27,7 @@ function calculateAge(date) {
 function validation() {
   let email = document.getElementById("email").value;
   let email2 = document.getElementById("email2").value;
-
+  console.log(email, email2)
   if (email !== email2) {
     document.getElementById("errorEmail").value = "Not match";
   }
